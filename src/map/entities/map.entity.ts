@@ -5,8 +5,8 @@ import { IsOptional } from 'class-validator';
 
 @Entity({ name: 'geodata' })
 export class Map {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ nullable: true })
   name: string;
@@ -24,7 +24,4 @@ export class Map {
     nullable: true,
   })
   geom: GeoJSON;
-
-  // @IsOptional()
-  // geometry?: number[][];
 }
