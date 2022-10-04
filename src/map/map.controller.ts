@@ -10,9 +10,9 @@ export class MapController {
 
   @Get()
   msg() {
-
     return "this is come from map controller"
   }
+
   @Post('geom')
   async createGeom(
     @Body()
@@ -20,6 +20,7 @@ export class MapController {
     console.log("this is come from map controller", geomData)
     return this.mapService.createGeom(geomData)
   }
+  
   @Post()
   create(@Body() createMapDto: CreateMapDto) {
     return this.mapService.create(createMapDto);
